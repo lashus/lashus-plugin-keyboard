@@ -9,46 +9,33 @@ var LashusKeyboard = function() {
 };
 
 LashusKeyboard.hideKeyboardAccessoryBar = function(hide) {
-    exec(null, null, "LashusKeyboard", "hideKeyboardAccessoryBar", [hide]);
+    exec(null, null, "Keyboard", "hideKeyboardAccessoryBar", [hide]);
 };
 
 LashusKeyboard.close = function() {
-    exec(null, null, "LashusKeyboard", "close", []);
+    exec(null, null, "Keyboard", "close", []);
 };
 
 LashusKeyboard.show = function() {
-    exec(null, null, "LashusKeyboard", "show", []);
+    exec(null, null, "Keyboard", "show", []);
 };
 
 LashusKeyboard.showForced = function() {
-    exec(null, null, "LashusKeyboard", "showForced", []);
+    exec(null, null, "Keyboard", "showForced", []);
 };
 
 LashusKeyboard.disableScroll = function(disable) {
-    exec(null, null, "LashusKeyboard", "disableScroll", [disable]);
+    exec(null, null, "Keyboard", "disableScroll", [disable]);
 };
 
-/*
-Keyboard.styleDark = function(dark) {
- exec(null, null, "Keyboard", "styleDark", [dark]);
-};
-*/
-
-Keyboard.isVisible = false;
+LashusKeyboard.isVisible = false;
 
 channel.onCordovaReady.subscribe(function() {
-    exec(success, null, 'LashusKeyboard', 'init', []);
+    exec(success, null, 'Keyboard', 'init', []);
 
     function success(msg) {
         var action = msg.charAt(0);
         if ( action === 'S' ) {
-            var keyboardHeight = msg.substr(1);
-            cordova.plugins.LashusKeyboard.isVisible = true;
-            cordova.fireWindowEvent('native.keyboardshow', { 'keyboardHeight': + keyboardHeight });
-
-            //deprecated
-            cordova.fireWindowEvent('native.showkeyboard', { 'keyboardHeight': + keyboardHeight });
-        } else if ( action === 'FS' ) {
             var keyboardHeight = msg.substr(1);
             cordova.plugins.LashusKeyboard.isVisible = true;
             cordova.fireWindowEvent('native.keyboardshow', { 'keyboardHeight': + keyboardHeight });

@@ -43,7 +43,7 @@ public class LashusKeyboard extends CordovaPlugin {
         if ("show".equals(action)) {
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
-                    ((InputMethodManager) cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(0, InputMethodManager.HIDE_IMPLICIT_ONLY);
+                    ((InputMethodManager) cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                     callbackContext.success(); // Thread-safe.
                 }
             });
@@ -54,14 +54,14 @@ public class LashusKeyboard extends CordovaPlugin {
                 public void run() {
 
                     View v = cordova.getActivity().getCurrentFocus();
-                    v.setFocusable(true);
-                    v.setFocusableInTouchMode(true);
+                    InputMethodManager imm = ((InputMethodManager) cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE));
 
-                    InputMethodManager mgr = ((InputMethodManager) cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE));
-
-                    mgr.toggleSoftInputFromWindow(v.getWindowToken(),InputMethodManager.SHOW_IMPLICIT, InputMethodManager.HIDE_IMPLICIT_ONLY);
-
-                    callbackContext.success(); // Thread-safe.
+                    if (v == null) {
+                        callbackContext.error("No current focus");
+                    } else {
+                        imm.showSoftInput(v, InputMethodManager.SHOW_FORCED);
+                        callbackContext.success(); // Thread-safe.
+                    }
                 }
             });
             return true;
