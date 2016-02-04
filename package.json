@@ -1,0 +1,22 @@
+{
+  "name": "lashus-plugin-keyboard",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "lashus-plugin-keyboard",
+    "platforms": [
+      "android"
+    ]
+  },
+  "description": "Lashus Keyboard Plugin",
+  "repository": "https://github.com/lashus/lashus-plugin-keyboard.git",
+  "issue": "https://github.com/lashus/lashus-plugin-keyboard/issues",
+  "keywords": [
+    "ionic",
+    "cordova",
+    "keyboard",
+    "ecosystem:cordova",
+    "cordova-android",
+  ],
+  "author": "Adrian Gorny (lashus)",
+  "license": "Apache 2.0"
+}

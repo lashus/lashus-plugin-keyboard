@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="lashus-plugin-keyboard"
+    version="1.0.0">
+    <name>Keyboard</name>
+    <description>Lashus Keyboard Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>Ionic,keyboard</keywords>
+
+    <!-- android -->
+    <platform name="android">
+        <js-module src="www/android/keyboard.js" name="keyboard">
+            <runs/>
+            <clobbers target="cordova.plugins.LashusKeyboard" />
+        </js-module>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Keyboard">
+              <param name="android-package" value="lashus.keyboard.LashusKeyboard" />
+              <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/LashusKeyboard.java" target-dir="src/lashus/keyboard" />
+    </platform>
+
+</plugin>
