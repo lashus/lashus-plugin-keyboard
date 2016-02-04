@@ -1,30 +1,22 @@
 {
-  "name": "ionic-plugin-keyboard",
-  "version": "1.0.8",
+  "name": "lashus-plugin-keyboard",
+  "version": "1.0.0",
   "cordova": {
-    "id": "ionic-plugin-keyboard",
+    "id": "lashus-plugin-keyboard",
     "platforms": [
-      "android",
-      "ios",
-      "blackberry10",
-      "wp8",
-      "windows"
+      "android"
     ]
   },
-  "description": "Ionic Keyboard Plugin",
-  "repository": "https://github.com/driftyco/ionic-plugin-keyboard.git",
-  "issue": "https://github.com/driftyco/ionic-plugin-keyboard/issues",
+  "description": "Lashus Keyboard Plugin",
+  "repository": "https://github.com/lashus/lashus-plugin-keyboard.git",
+  "issue": "https://github.com/lashus/lashus-plugin-keyboard/issues",
   "keywords": [
     "ionic",
     "cordova",
     "keyboard",
     "ecosystem:cordova",
     "cordova-android",
-    "cordova-ios",
-    "cordova-blackberry10",
-    "cordova-wp8",
-    "cordova-windows"
   ],
-  "author": "Ionic",
+  "author": "Adrian Gorny (lashus)",
   "license": "Apache 2.0"
 }

@@ -21,7 +21,7 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/IonicKeyboard.java" target-dir="src/lashus/keyboard" />
+        <source-file src="src/android/LashusKeyboard.java" target-dir="src/lashus/keyboard" />
     </platform>
 
 </plugin>
